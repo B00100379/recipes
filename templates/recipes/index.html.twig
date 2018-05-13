@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recipes{% endblock %}
+{% block body %}
+
+	<h1>Recipes</h1>
+
+	<table id="recipes" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Recipe</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for recipe in recipes %}
+				<tr>				
+					<td>{{ recipe.title }} </td>
+					<td> 
+						<a href="/recipe/display/{{ recipe.id }}" class="btn btn-dark">Show</a> 
+						<a href="/recipe/delete/{{ recipe.id }}" class="btn btn-danger">Delete</a> 
+						<a href="#" class="btn btn-danger" data-id="{{ recipe.id }} ">Delete</a> 
+
+					</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+
+		<tfoot>
+			
+		</tfoot>
+
+	</table>
+
+
+{% endblock %}
+
+{% block javascripts %}
+	<script src="/js/main.js"></script>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Collection{% endblock %}
+
+{% block body %}
+    <h1>Create new Collection</h1>
+	<div class="btn-group">
+		
+	    {{ include('coll/_form.html.twig') }}
+
+	    <a href="{{ path('coll_index') }}">Back</a>
+
+	</div>
+
+{% endblock %}
